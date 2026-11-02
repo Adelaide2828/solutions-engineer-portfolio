@@ -1,0 +1,21 @@
+account_name,industry,annual_revenue,mrr,primary_contact_name,primary_contact_email,expected_tier,security_clearance_required
+Apex Global Logistics,Transportation,120000000,75000,Sarah Jenkins,sjenkins@apexlogistics.com,Tier 1 - Enterprise,TRUE
+Vanguard Healthcare Inc,Healthcare,85000000,55000,Dr. Michael Chang,mchang@vanguardhealth.org,Tier 1 - Enterprise,TRUE
+FinTech Streamline Ltd,Financial Services,210000000,110000,David Miller,dmiller@fintechstreamline.com,Tier 1 - Enterprise,TRUE
+Nexus Cloud Infrastructure,Technology,95000000,62000,Elena Rostova,erostova@nexuscloud.io,Tier 1 - Enterprise,TRUE
+BioPharm Analytical,Life Sciences,45000000,32000,Liam O'Connor,loconnor@biopharm.co.uk,Tier 2 - Mid-Market,FALSE
+Zenith Digital Marketing,Advertising,18000000,15000,Rachel Green,rgreen@zenithdigital.com,Tier 2 - Mid-Market,FALSE
+Cobalt Manufacturing,Manufacturing,38000000,28000,Klaus Schneider,kschneider@cobaltmfg.de,Tier 2 - Mid-Market,FALSE
+Atlas Retail Group,Retail,52000000,42000,Carlos Hernandez,chernandez@atlasretail.es,Tier 2 - Mid-Market,FALSE
+Beacon Security Solutions,Cybersecurity,29000000,22000,Marcus Vance,mvance@beaconsec.com,Tier 2 - Mid-Market,TRUE
+Solaria Renewable Systems,Energy,64000000,48000,Amina Yusuf,ayusuf@solariasystems.com,Tier 2 - Mid-Market,FALSE
+PixelCraft Studio,Media,4200000,3500,Toby Maguire,toby@pixelcraft.studio,Tier 3 - Growth,FALSE
+Kona Coffee Roasters,Food & Beverage,2100000,1800,Keanu Reeves,keanu@konaroasters.com,Tier 3 - Growth,FALSE
+Verde Urban Farms,Agriculture,3500000,2900,Chioma Adeyemi,chioma@verdefarms.ng,Tier 3 - Growth,FALSE
+RapidCourier Logistics,Transportation,5100000,4200,Luka Modric,luka@rapidcourier.hr,Tier 3 - Growth,FALSE
+SwiftPay Solutions,Financial Services,7800000,6800,Zoe Saldana,zoe@swiftpay.io,Tier 3 - Growth,FALSE
+Summit Coworking Spaces,Real Estate,6200000,5100,Arthur Pendelton,arthur@summitspaces.co,Tier 3 - Growth,FALSE
+BlueWave Marine Technologies,Marine,8900000,7400,Helena Berg,helena@bluewavemarine.no,Tier 3 - Growth,FALSE
+OmniDental Network,Healthcare,7100000,6200,Dr. Ananya Rao,ananya@omnidental.in,Tier 3 - Growth,FALSE
+Quantum AI Labs,Technology,165000000,95000,Dr. Hiroshi Tanaka,htanaka@quantumailabs.jp,Tier 1 - Enterprise,TRUE
+Hyperion Robotics,Robotics,72000000,51000,Sven Lindqvist,sven@hyperionrobotics.se,Tier 1 - Enterprise,TRUE

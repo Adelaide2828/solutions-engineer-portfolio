@@ -1,0 +1,61 @@
+{
+  "manifestId": "manifest:ixo:rubric:numiknow-sef-v2",
+  "domainDid": "did:ixo:entity:8ebe9a347781b239b031b83d1c499c",
+  "name": "NumiKnow Facilitator Evaluation Rubric",
+  "version": "2.4.0",
+  "currency": "IXO",
+  "baseIncentivePerLearner": 15.0,
+  "rules": [
+    {
+      "id": "R1",
+      "name": "Facilitator Certification Threshold",
+      "field": "facilitatorCertScore",
+      "operator": ">=",
+      "threshold": 80,
+      "failureAction": "REJECT",
+      "rejectionMessage": "Facilitator certification score below minimum threshold of 80."
+    },
+    {
+      "id": "R2",
+      "name": "Geofence Distance Verification",
+      "field": "gpsDistanceMeters",
+      "operator": "<=",
+      "threshold": 50,
+      "hardRejectThreshold": 100,
+      "failureAction": "REJECT",
+      "rejectionMessage": "Session GPS coordinates outside acceptable school boundary (>50m)."
+    },
+    {
+      "id": "R3",
+      "name": "Evidence Screenshot Clarity",
+      "field": "imageClarityConfidence",
+      "operator": ">=",
+      "threshold": 0.70,
+      "failureAction": "ESCALATE",
+      "escalationMessage": "Screenshot evidence quality below confidence threshold (0.70)."
+    },
+    {
+      "id": "R4",
+      "name": "Score Delta Plausibility",
+      "field": "scoreDeltaPoints",
+      "operator": "<=",
+      "threshold": 50,
+      "failureAction": "ESCALATE",
+      "escalationMessage": "Learner score improvement exceeds plausible threshold (+50 points in single period)."
+    },
+    {
+      "id": "R5",
+      "name": "Roster Registration Check",
+      "field": "isRegisteredLearner",
+      "operator": "==",
+      "threshold": true,
+      "failureAction": "ESCALATE",
+      "escalationMessage": "Learner name or DID not found in initial enrolled project roster."
+    }
+  ],
+  "escalationConfig": {
+    "queue": "private:sef-auditor-triage",
+    "slaHours": 48,
+    "notifyRoles": ["coordinator", "auditor"]
+  }
+}

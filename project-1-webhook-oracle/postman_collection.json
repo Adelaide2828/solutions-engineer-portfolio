@@ -1,0 +1,123 @@
+{
+  "info": {
+    "name": "Webhook Data Validation Oracle Test Suite",
+    "description": "Integration test suite for the Automated Data Validation & Webhook Oracle. Tests valid ingestion, anomaly rejection, and schema enforcement.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "webhook_url",
+      "value": "https://hook.eu2.make.com/YOUR_WEBHOOK_ID_HERE",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "01 - Valid Telemetry Ingestion (Expected 200 OK)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"event_id\": \"8f3e2b14-9c8d-4f11-b2e3-6a7c8e9f0123\",\n  \"facility_id\": \"FAC-104\",\n  \"reading_timestamp\": \"2026-11-02T18:30:00Z\",\n  \"temperature_c\": -18.4,\n  \"humidity_pct\": 62.5,\n  \"sensor_status\": \"ONLINE\"\n}"
+        },
+        "url": {
+          "raw": "{{webhook_url}}",
+          "host": ["{{webhook_url}}"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200 OK\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"Response indicates accepted status\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.status).to.eql(\"success\");",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "02 - Anomaly Detection - High Temp (Expected 422 Unprocessable)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"event_id\": \"c71a39d8-2194-4b90-8e12-349f50e82110\",\n  \"facility_id\": \"FAC-104\",\n  \"reading_timestamp\": \"2026-11-02T18:31:00Z\",\n  \"temperature_c\": 34.8,\n  \"humidity_pct\": 71.0,\n  \"sensor_status\": \"ONLINE\"\n}"
+        },
+        "url": {
+          "raw": "{{webhook_url}}",
+          "host": ["{{webhook_url}}"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 422 Unprocessable Entity\", function () {",
+              "    pm.response.to.have.status(422);",
+              "});",
+              "pm.test(\"Response error details integrity violation\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.error).to.eql(\"INTEGRITY_VIOLATION\");",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "03 - Malformed Payload - Missing Fields (Expected 400 or 422)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"facility_id\": \"UNKNOWN_SITE\",\n  \"temperature_c\": -5.0\n}"
+        },
+        "url": {
+          "raw": "{{webhook_url}}",
+          "host": ["{{webhook_url}}"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code indicates client error (400 or 422)\", function () {",
+              "    pm.expect(pm.response.code).to.be.oneOf([400, 422]);",
+              "});"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

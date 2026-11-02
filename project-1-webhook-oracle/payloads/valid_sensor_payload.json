@@ -1,0 +1,8 @@
+{
+  "event_id": "8f3e2b14-9c8d-4f11-b2e3-6a7c8e9f0123",
+  "facility_id": "FAC-104",
+  "reading_timestamp": "2026-11-02T18:30:00Z",
+  "temperature_c": -18.4,
+  "humidity_pct": 62.5,
+  "sensor_status": "ONLINE"
+}

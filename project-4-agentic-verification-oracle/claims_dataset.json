@@ -1,0 +1,93 @@
+[
+  {
+    "claimId": "CLM-NK-0184",
+    "schoolName": "Hoedspruit Primary (Grade 6B)",
+    "facilitatorDid": "did:ixo:entity:fac_thabo_01",
+    "facilitatorCertScore": 92,
+    "gpsDistanceMeters": 24,
+    "imageClarityConfidence": 0.94,
+    "baselineScore": 38,
+    "finalScore": 72,
+    "scoreDeltaPoints": 34,
+    "isRegisteredLearner": true,
+    "screenshotUrl": "ipfs://bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi/proof184.png"
+  },
+  {
+    "claimId": "CLM-NK-0185",
+    "schoolName": "Acornhoek Community School",
+    "facilitatorDid": "did:ixo:entity:fac_sipho_09",
+    "facilitatorCertScore": 88,
+    "gpsDistanceMeters": 41,
+    "imageClarityConfidence": 0.89,
+    "baselineScore": 45,
+    "finalScore": 78,
+    "scoreDeltaPoints": 33,
+    "isRegisteredLearner": true,
+    "screenshotUrl": "ipfs://bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi/proof185.png"
+  },
+  {
+    "claimId": "CLM-NK-0186",
+    "schoolName": "Hoedspruit Primary (Grade 6A)",
+    "facilitatorDid": "did:ixo:entity:fac_kelebogile_04",
+    "facilitatorCertScore": 84,
+    "gpsDistanceMeters": 142,
+    "imageClarityConfidence": 0.91,
+    "baselineScore": 50,
+    "finalScore": 52,
+    "scoreDeltaPoints": 2,
+    "isRegisteredLearner": true,
+    "screenshotUrl": "ipfs://bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi/proof186.png"
+  },
+  {
+    "claimId": "CLM-NK-0187",
+    "schoolName": "Mahlale Secondary Outreach",
+    "facilitatorDid": "did:ixo:entity:fac_lerato_12",
+    "facilitatorCertScore": 85,
+    "gpsDistanceMeters": 31,
+    "imageClarityConfidence": 0.88,
+    "baselineScore": 20,
+    "finalScore": 92,
+    "scoreDeltaPoints": 72,
+    "isRegisteredLearner": true,
+    "screenshotUrl": "ipfs://bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi/proof187.png"
+  },
+  {
+    "claimId": "CLM-NK-0188",
+    "schoolName": "Bushbuckridge Education Hub",
+    "facilitatorDid": "did:ixo:entity:fac_nomsa_07",
+    "facilitatorCertScore": 74,
+    "gpsDistanceMeters": 18,
+    "imageClarityConfidence": 0.85,
+    "baselineScore": 40,
+    "finalScore": 68,
+    "scoreDeltaPoints": 28,
+    "isRegisteredLearner": true,
+    "screenshotUrl": "ipfs://bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi/proof188.png"
+  },
+  {
+    "claimId": "CLM-NK-0189",
+    "schoolName": "Hoedspruit Primary (Grade 6C)",
+    "facilitatorDid": "did:ixo:entity:fac_thabo_01",
+    "facilitatorCertScore": 92,
+    "gpsDistanceMeters": 28,
+    "imageClarityConfidence": 0.62,
+    "baselineScore": 35,
+    "finalScore": 70,
+    "scoreDeltaPoints": 35,
+    "isRegisteredLearner": true,
+    "screenshotUrl": "ipfs://bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi/proof189.png"
+  },
+  {
+    "claimId": "CLM-NK-0190",
+    "schoolName": "Acornhoek Community School",
+    "facilitatorDid": "did:ixo:entity:fac_sipho_09",
+    "facilitatorCertScore": 88,
+    "gpsDistanceMeters": 35,
+    "imageClarityConfidence": 0.95,
+    "baselineScore": 40,
+    "finalScore": 75,
+    "scoreDeltaPoints": 35,
+    "isRegisteredLearner": false,
+    "screenshotUrl": "ipfs://bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi/proof190.png"
+  }
+]
