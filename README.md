@@ -85,10 +85,9 @@ graph TD
 
 ---
 
-## 🚀 How to Review This Portfolio
-
 1. **Test the Webhook Oracle:** Import the [Postman Collection](./project-1-webhook-oracle/postman_collection.json) to run automated test cases against live or mock webhook endpoints.
 2. **Review Database DDL:** Inspect the [Supabase SQL Schema](./project-1-webhook-oracle/supabase_schema.sql) with strict check constraints and audit timestamps.
 3. **Explore the CRM Process:** Walk through the [Salesforce / CRM Data Dictionary & Architecture](./project-2-enterprise-crm-engine/README.md).
 4. **Experience the Live Analytics Dashboard:** Review the [NumiKnow IXO Analytical Dashboard](./project-3-ixo-analytics-dashboard/README.md) designed for multi-tier stakeholder verification.
-5. **Read the Interview Cheatsheet:** See the [STAR Method Interview Playbook](./interview-prep/STAR_METHOD_SCRIPTS.md) for how each project is presented in technical interviews.
+5. **Run the Verification Oracle Simulation:** Execute `python project-4-agentic-verification-oracle/oracle_runner.py` to test automated policy manifest evaluations against real field claims.
+
