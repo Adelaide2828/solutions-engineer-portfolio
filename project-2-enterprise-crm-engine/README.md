@@ -96,10 +96,8 @@ Detailed configuration instructions are provided in:
 - [**Salesforce Flow Builder Blueprint**](./salesforce_flow_blueprint.md): Node-by-node logic for Record-Triggered Flows.
 - [**Mock Dataset (Mockaroo CSV)**](./dummy_dataset_mockaroo.csv): 20 enterprise accounts ready for bulk import and test simulation.
 
----
+## 💡 Architectural Summary & Business Impact
 
-## 🎯 Interview Talking Points (Solutions Engineer)
+This architecture applies declarative platform engineering principles to solve cross-departmental handoff friction between Sales and Customer Success. By modeling custom relational objects and implementing Record-Triggered Flows, the engine dynamically tiers incoming accounts based on MRR, provisions technical security reviews, and assigns dedicated implementation resources.
 
-> *"In this project, I architected an enterprise CRM onboarding engine using declarative platform engineering principles. I designed custom relational data models to eliminate cross-departmental communication gaps between sales and customer success.*
-> 
-> *By using a Record-Triggered Flow, the system dynamically tiers new accounts based on MRR, assigns dedicated solutions architects to enterprise contracts, provisions security audit checklists automatically, and enforces a 24-hour first-touch SLA with automated management escalations. This reduced manual data entry to zero and prevented enterprise onboarding drop-offs."*
+The automated 24-hour SLA watchdog ensures immediate operational escalations for stalled accounts, cutting manual data entry to zero and preventing enterprise customer onboarding drop-offs.

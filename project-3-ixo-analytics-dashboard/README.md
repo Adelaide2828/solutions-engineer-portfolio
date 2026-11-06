@@ -59,7 +59,7 @@ graph TD
 
 ---
 
-## 🔍 The 4-Tier Data Trust Framework (Interview Highlight)
+## 🔍 The 4-Tier Data Trust Framework
 
 In enterprise data solutions, not all numbers carry equal weight. This dashboard implements a rigorous **4-Tier Data Trust Model**:
 
@@ -106,8 +106,9 @@ Open `http://localhost:8080` in any modern browser.
 
 ---
 
-## 🎯 Interview Talking Points (Solutions Engineer)
+## 💡 Architectural Summary & Business Impact
 
-> *"In this project, I built an enterprise-grade provenance dashboard over the IXO blockchain for an educational impact program. Traditional reporting relies on unverifiable PDFs; this dashboard queries Blocksync GraphQL to surface verified claims in real time.*
-> 
-> *As a Solutions Engineer, I established a 4-Tier Data Trust Framework distinguishing immutable cryptographic proofs from sensor telemetry and subjective assertions. This transparency gave funders total confidence in milestone disbursements and reduced quarterly auditing time from three weeks to minutes."*
+This dashboard bridges decentralized ledger verification with executive reporting needs. By connecting directly to Blocksync GraphQL endpoints, it turns raw on-chain state mutations into actionable stakeholder metrics.
+
+The 4-Tier Data Trust Framework provides clarity by distinguishing immutable cryptographic proofs from sensor telemetry and qualitative assertions. This transparency gives institutional funders full confidence in milestone disbursements and reduced quarterly audit cycles from weeks to minutes.
+

@@ -149,10 +149,8 @@ curl -X POST "https://hook.eu2.make.com/YOUR_WEBHOOK_ID" \
   -d @payloads/invalid_anomaly_payload.json
 ```
 
----
+## 💡 Architectural Summary & Business Impact
 
-## 🎯 Interview Talking Points (Solutions Engineer)
+The event-driven validation oracle acts as an intelligent firewall for incoming IoT and field data. Instead of allowing malformed or anomalous data to reach downstream production PostgreSQL and Airtable data stores, the pipeline inspects every payload in-flight against strict business rules. 
 
-> *"In this project, I built an event-driven validation oracle that serves as an intelligent firewall for incoming IoT and field data. Instead of allowing malformed or anomalous data to reach our production Postgres and Airtable data stores, the pipeline inspects every payload in flight against strict business rules.*
-> 
-> *Clean records are normalized and committed synchronously with a 200 response, while threshold breaches—like refrigeration failure—trigger immediate operational alerts and quarantine logging with a 422 status code. This pattern protects database integrity and cuts downstream data maintenance costs to zero."*
+Clean records are normalized and committed synchronously with an HTTP 200 response, while threshold breaches (such as refrigeration failure) trigger immediate operational alerts and quarantine logging with an HTTP 422 status code. This pattern enforces strict database integrity and eliminates downstream data remediation costs.
