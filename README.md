@@ -72,6 +72,9 @@ graph TD
 | **[2. Enterprise CRM Engine](./project-2-enterprise-crm-engine/)** | Manual client onboarding delays & SLA drop-offs | Salesforce Flow, HubSpot, Data Modelling, Mockaroo | 70% reduction in lead-to-onboarding cycle time |
 | **[3. IXO Analytical Dashboard](./project-3-ixo-analytics-dashboard/)** | Opaque impact claims & funder reporting overhead | Blocksync GraphQL, JavaScript (ES6+), CSS3 Design System | Real-time multi-tier trust provenance for 1,000+ claims |
 | **[4. Agentic Verification Oracle](./project-4-agentic-verification-oracle/)** | Subjective, slow manual evaluation of field evidence | Verifiable Rubrics, Cosmos Authz, Policy Manifests | 85% automated instant verification with audit trails |
+| **[5. Customer Churn & Revenue Risk Analysis](./data-analytics-case-study-churn/)** | Unpredictable customer non-renewals & silent ARR loss | SQL (PostgreSQL), Python (Pandas/Scikit-Learn), Power BI | Identified $145k ARR at risk; projected $115k annual ARR recovery |
+| **[6. Regional Freight & Logistics BI](./data-analytics-case-study-logistics/)** | Margin erosion & transit SLA penalties across shipping routes | Star Schema Modeling, Enterprise DAX, Power BI, Python | Isolated 74% penalty root cause; projected R380k quarterly savings |
+
 
 ---
 

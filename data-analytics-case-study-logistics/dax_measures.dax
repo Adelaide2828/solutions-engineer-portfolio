@@ -1,0 +1,124 @@
+// ===============================================================================
+// LOGISTICS BI & OPERATIONS ANALYTICS ENGINE - DAX MEASURES REPOSITORY
+// Designed for Power BI Desktop, Microsoft Fabric Lakehouse, & Direct Lake / Import
+// ===============================================================================
+
+// -------------------------------------------------------------------------------
+// 1. VOLUME & STATUS METRICS
+// -------------------------------------------------------------------------------
+
+Total Shipments = 
+COUNTROWS('Fact_Shipments')
+
+Delivered Shipments = 
+CALCULATE(
+    COUNTROWS('Fact_Shipments'),
+    'Fact_Shipments'[DeliveryStatus] = "Delivered"
+)
+
+In-Transit Volume = 
+CALCULATE(
+    COUNTROWS('Fact_Shipments'),
+    'Fact_Shipments'[DeliveryStatus] IN { "In Transit", "Delayed - En Route" }
+)
+
+Exception Shipments = 
+CALCULATE(
+    COUNTROWS('Fact_Shipments'),
+    'Fact_Shipments'[DeliveryStatus] = "Exception / Damaged"
+)
+
+// -------------------------------------------------------------------------------
+// 2. SLA & OTIF (ON-TIME IN-FULL) COMPLIANCE
+// -------------------------------------------------------------------------------
+
+On-Time Deliveries = 
+CALCULATE(
+    COUNTROWS('Fact_Shipments'),
+    'Fact_Shipments'[DeliveryStatus] = "Delivered",
+    'Fact_Shipments'[IsOnTime] = 1
+)
+
+OTIF Delivery Rate % = 
+DIVIDE(
+    [On-Time Deliveries],
+    [Delivered Shipments],
+    0
+)
+
+Late Shipments = 
+CALCULATE(
+    COUNTROWS('Fact_Shipments'),
+    'Fact_Shipments'[DeliveryStatus] = "Delivered",
+    'Fact_Shipments'[IsOnTime] = 0
+)
+
+Late Delivery Rate % = 
+DIVIDE(
+    [Late Shipments],
+    [Delivered Shipments],
+    0
+)
+
+// -------------------------------------------------------------------------------
+// 3. TRANSIT DURATION & BOTTLENECK ANALYSIS
+// -------------------------------------------------------------------------------
+
+Avg Actual Transit Days = 
+AVERAGEX(
+    FILTER('Fact_Shipments', 'Fact_Shipments'[DeliveryStatus] = "Delivered"),
+    'Fact_Shipments'[ActualTransitDays]
+)
+
+Avg Target SLA Days = 
+AVERAGE('Fact_Shipments'[TargetSLADays])
+
+Transit Variance (Days) = 
+[Avg ActualTransit Days] - [Avg Target SLA Days]
+
+Severe Delay Count = 
+CALCULATE(
+    COUNTROWS('Fact_Shipments'),
+    'Fact_Shipments'[DelayCategory] = "Severe Delay (>2 Days)"
+)
+
+// -------------------------------------------------------------------------------
+// 4. COST & LOGISTICS UNIT ECONOMICS
+// -------------------------------------------------------------------------------
+
+Total Freight Spend = 
+SUM('Fact_Shipments'[FreightCostZAR])
+
+Total Freight Tonnage = 
+DIVIDE(
+    SUM('Fact_Shipments'[WeightKG]),
+    1000,
+    0
+)
+
+Cost Per Ton Delivered = 
+DIVIDE(
+    [Total Freight Spend],
+    [Total Freight Tonnage],
+    0
+)
+
+Cost Per Kilometer = 
+DIVIDE(
+    SUM('Fact_Shipments'[FreightCostZAR]),
+    SUM('Fact_Shipments'[DistanceKM]),
+    0
+)
+
+// -------------------------------------------------------------------------------
+// 5. CARRIER PERFORMANCE TIERING (Conditional KPI)
+// -------------------------------------------------------------------------------
+
+Carrier Performance Rating = 
+SWITCH(
+    TRUE(),
+    [OTIF Delivery Rate %] >= 0.95, "⭐⭐⭐⭐⭐ Tier 1 Elite",
+    [OTIF Delivery Rate %] >= 0.90, "⭐⭐⭐⭐ Tier 2 Standard",
+    [OTIF Delivery Rate %] >= 0.80, "⭐⭐⭐ Tier 3 Warning",
+    "⚠️ Underperforming (Escalate)"
+)
